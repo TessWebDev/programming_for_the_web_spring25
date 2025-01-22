@@ -47,14 +47,14 @@
      window.alert("black is the coolest");
  }
 
- let circleX = 0:
+ let circleX = 0;
  let myColor = window.prompt("what color?");
  let speed = Number(window.prompt("how fast - 1 to 10"));
  function setup() {
      createCanvas(400, 400);
  }
 
- function draw() {
+ function draw(circleX) {
      background(220);
      fill("purple")
      circleX(circleX, 200, 50);
