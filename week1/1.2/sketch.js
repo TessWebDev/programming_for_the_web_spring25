@@ -1,6 +1,13 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(900, 700);
 }
+
+const myName = window.prompt("Circle or Square?"); //varible -- "hello" name -- bucket
+        if(myName !== "square") {
+        window.alert("circle");
+        } else {
+        window.alert("It is a circle, sorry.");
+        }
 
 function draw() {
   if (mouseIsPressed) {
