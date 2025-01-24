@@ -28,7 +28,7 @@
 //condidtions
 //if condidtion
 //keyword "if" + parentheses with condition + curly brackets with what
-//to do if itt is true
+//to do if it is true
 //three equal signs is strict equal - same value, same data type
 //two equal signs is loose equal - calculte to same value - don't use
 // if(myNumber === 16) {
