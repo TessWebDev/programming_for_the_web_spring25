@@ -4,16 +4,16 @@ function setup() {
 
 function createTile(originX, originY, primaryColor, secondaryColor, circleOutlineColor, dotColor) {
     translate(originX, originY); //the "z" would make it 3D EX: (0, y, z)
-    fill('primaryColor');
+    fill(primaryColor);
     rect(0, 0, 200, 200); //rect = rectangle EX: (x, y, w, h)
-    stroke('secondaryColor'); // This creates a line
+    stroke(secondaryColor); // This creates a line
     strokeWeight(5);
     line(0, 0, 200, 200);
     line(200, 0, 0, 200);
     
 //blue circles
-    fill('dotColor');
-    stroke('circleOoutlineColor');
+    fill(dotColor);
+    stroke(circleOutlineColor);
     strokeWeight(3);
     rect(25, 25, 50, 50);
     rect(25, 125, 50, 50);
@@ -31,10 +31,16 @@ function createTile(originX, originY, primaryColor, secondaryColor, circleOutlin
 }
 
  function draw() { // This calls the item to show up on the screen.
-    createTile(0, 0, 'white', 'orange');
-    createTile(0, 200);
-    createTile(0, 200);
+    createTile(0, 0, 'white', 'orange', 'green', 'blue');
+    createTile(0, 200, 'cyan', 'yellow', 'magenta', 'white');
+    createTile(0, 200, 'megenta', 'yellow', 'cyan', 'white');
     //second column
-    createTile(200, -400, 'cyan', 'yellow');
-    createTile(200,)
+    createTile(200, -400, 'cyan', 'yellow', 'magenta', 'black');
+    createTile(0, 200, 'white', 'orange', 'green', 'blue');
+    createTile(0, 200, 'cyan', 'yellow', 'magenta', 'black');
+    //third column
+    createTile(200, -400, 'megenta', 'yellow', 'cyan', 'white');
+    createTile(0, 200, 'cyan', 'yellow', 'magenta', 'white');
+    createTile(0, 200, 'white', 'orange', 'green', 'blue');
+
  }

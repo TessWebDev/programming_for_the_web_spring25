@@ -26,7 +26,7 @@ function draw() {
     strokeWeight(40);
     line(400, 120, 600, 120);
     //hat body
-    quad(400, 50, 600, 50, 550, 120, 450, 120); //all x,y coordnates 
+    quad(400, 50, 600, 50, 550, 120, 450, 120); //all x,y coordnates  
     //eyes
     stroke(0);
     strokeWeight(50);
