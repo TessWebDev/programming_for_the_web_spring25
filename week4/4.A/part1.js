@@ -1,3 +1,6 @@
+
+
+
 let startingX = 200;
 let startingY = 100;
 let myCircles = [];
