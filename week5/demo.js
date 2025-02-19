@@ -17,7 +17,7 @@ cancelButton.addEventListener("click", () => {
 //the point of the constructor allows you to do special configuration
 //constructor takes arguments
 //class Auto {
-    // color = "red";  //these are arguments
+    // color = "red";  //these are arguments  --- put them in parentheses ()
 //     model = "Honda";
 // }
 
@@ -27,7 +27,7 @@ class Auto {
         this.model = model;
     }
 }
-const myCar = new Auto();
+const myCar = new Auto("Honda");
 
 function setup() {
     createCanvas(800, 800);
