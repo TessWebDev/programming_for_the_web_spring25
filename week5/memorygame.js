@@ -22,13 +22,20 @@ class Card {
     }
     
     show () { //methods -- like functions, but specific to your class
-        fill('rgb(57.7%, 9.9%, 9.9%)');
-        rect(this.x, this.y, this.width, this.height, 10);
+        if(this.face === DOWN) {
+            fill('rgb(57.7%, 9.9%, 9.9%)');
+            rect(this.x, this.y, this.width, this.height, 10);
+        } else {
+            fill('#aaa');
+            rect(this.x, this.y, this.width, this.height, 10);
+        }
+        
     }
 
     didHit (mouseX, mouseY){
         if (mouseX >= this.x && mouseX <= this.x + this.width &&
             mouseY >= this.y && mouseY <= this.y + this.height) {
+                this.flip(); // the flip call
                 return true;
             }   else {
                 return false;
