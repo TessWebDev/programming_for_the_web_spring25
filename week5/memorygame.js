@@ -1,4 +1,6 @@
 let myCard;
+const DOWN = 'down'; //const because it will not change
+const UP = 'up';
 function setup() {
     createCanvas(800, 600);
     background(0);
@@ -15,6 +17,7 @@ class Card {
         this.y = 100;
         this.width = 80;
         this.height = 100;
+        this.face = DOWN; //the cards starting out as face down
         this.show();
     }
     
@@ -31,5 +34,13 @@ class Card {
                 return false;
             }
         
+    }
+    flip () { // checks to see what the state of the face direction is and then call show
+        if (this.face === DOWN) {
+            this.face = UP;
+        } else {
+            this.face = DOWN;
+        }
+        this.show();
     }
 }
