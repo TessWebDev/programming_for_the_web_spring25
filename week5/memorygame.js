@@ -28,7 +28,7 @@ function preload() { // THIS HAPPENs 1ST
     ]
 }
 function setup() {
-    createCanvas(windowWidth, windowHeight); //size of canvas (background) could also be numbers you choose
+    createCanvas(2000, 1600); //size of canvas (background) could also be numbers you choose
     let selectedFaces = [];
     for (let z = 0; z < 6; z++ ) {  // z is the loop
             const randomIdx = floor(random(cardFaceArray.length));
