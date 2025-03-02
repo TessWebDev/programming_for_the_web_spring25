@@ -2,7 +2,7 @@ let blockX = 0;
 let blockY = 0;
 let blockColor = 255;
 let drawTimer;
-const speed = 2; // the function will execute after the time set (50 or speed) and will continue to execute until we clear it.
+const speed = 8; // the function will execute after the time set (50 or speed) and will continue to execute until we clear it.
 const distance = 2;
 
 function setup () {
@@ -38,7 +38,7 @@ window.setTimeout(() => {   //setTimeout only occures once.
         if (blockY - 50 > height && blockX - 50 > width) {    // clearing an interval
             //cancels timer
             window.clearInterval(drawTimer);
-            alert('done');
+            alert('Canvas Complete!');
         }
     }, speed);  // the function will execute after the time set (speed) and will continue to execute until we clear it.
 }, 1500);
