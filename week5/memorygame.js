@@ -1,4 +1,5 @@
 
+let myCard;
 const DOWN = 'down'; //const because it will not change
 const UP = 'up';
 let startingX = 100;
@@ -27,7 +28,7 @@ function preload() { // THIS HAPPENs 1ST
     ]
 }
 function setup() {
-    createCanvas(2000, 1600); //size of canvas (background)
+    createCanvas(windowWidth, windowHeight); //size of canvas (background) could also be numbers you choose
     let selectedFaces = [];
     for (let z = 0; z < 6; z++ ) {  // z is the loop
             const randomIdx = floor(random(cardFaceArray.length));
@@ -37,6 +38,7 @@ function setup() {
             //remove the used cardface so it doesn't get randomly selected again.
             cardFaceArray.splice(randomIdx, 1);   //splice takes the index and how many you want to remove, aka 1.
     }   
+   
     selectedFaces = shuffleArray(selectedFaces);
     for (let j = 0; j < 2; j++) { //this is the loop to create a row.
         for (let i = 0; i < 6; i++) { // the 6  is how many cards there are.
@@ -54,10 +56,10 @@ function setup() {
 }
 
 function draw () {
-    background(0); // color of background 
+    background('brown'); // color of background 
     if (gameState.numMatched === gameState.totalPairs) { // if the number matche = the total pairs, you'll get a text message in yellow
-        fill('yellow');
-        textSize(66);
+        fill('orange');
+        textSize(70);
         text('YOU WIN!!! ', 1500, 1650); // 400 from left, 425 from top
         noLoop(); // this could be where a button show up to reshuffle and try again.
     }
@@ -71,11 +73,11 @@ function draw () {
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
     fill(255); //white
-    textSize(36);
+    textSize(50);
     textFont();
     text('Attempts: ' + gameState.attempts, 450, 1100);
     text('Matches: ' + gameState.numMatched, 450, 1200);
-    text('Press Your Luck!', gameState.PressYourLuck, 450, 1300);
+    text('Press Your Luck!', 450, 1300);
 }
 
 function mousePressed() { // THIS FLIPS THE CARDS
@@ -85,10 +87,10 @@ function mousePressed() { // THIS FLIPS THE CARDS
     for (let k = 0; k < cards.length; k++) {  //the loop through the cards
        
         //first check flipped cards length, then we can trigger the flip.
-        if(gameState.flippedCards.length < 2 && cards[k].didHit(mouseX, mouseY)) { // the array name is cards, with a loop number   ///  gameState.flippedCards.length < 2 -- allows you to only flip two cards at a time.
-            console.log('flipped', cards[k]);
-            gameState.flippedCards.push(cards[k]);
-        }
+    if(gameState.flippedCards.length < 2 && cards[k].didHit(mouseX, mouseY)) { // the array name is cards, with a loop number   ///  gameState.flippedCards.length < 2 -- allows you to only flip two cards at a time.
+        gameState.flippedCards.push(cards[k]);
+        cards[k].flip();
+       }
     }
 
     if (gameState.flippedCards.length === 2) {
@@ -128,19 +130,20 @@ class Card {
     
     show () { //methods -- like functions, but specific to your class
         if (this.face === UP || this.isMatch) {  // || means or
-            fill('#aaa'); //the face of card (the different images)
-            rect(this.x, this.y, this.width, this.height, 10);
+            // fill('#aaa'); //the face of card (the different images)
+            // rect(this.x, this.y, this.width, this.height, 10);
             image(this.cardFaceImg, this.x , this.y + 2); //shows the image on the face of the card, variable = cardback, location -- x,y THE NUMBERS + helps position the image.
             
         } else {
-            fill('rgb(57.7%, 9.9%, 9.9%)');
-            rect(this.x, this.y, this.width, this.height, 10);    //I TOOK THIS OUT BECAUSE I AM USING WHOLE IMAGE I DESIGNED -- I NO LONGER NEED THE RED.
+            // fill('rgb(57.7%, 9.9%, 9.9%)');
+            // rect(this.x, this.y, this.width, this.height, 10);    //I TOOK THIS OUT BECAUSE I AM USING WHOLE IMAGE I DESIGNED -- I NO LONGER NEED THE RED.
             image(cardBack, this.x, this.y); //shows the image on the back of the card, variable = cardback, location -- x,y   
         }
         
     }
 
     didHit (mouseX, mouseY){
+    
         if (mouseX >= this.x && mouseX <= this.x + this.width &&
             mouseY >= this.y && mouseY <= this.y + this.height) {
                 this.flip(); // the flip call
@@ -168,6 +171,7 @@ class Card {
         const idx = Math.floor(Math.random() * counter);
         //decrease counter by 1 (decrement)
         counter--;
+        // [array[counter], array[idk], array[counter]];
         //swap the last element with it
         const temp = array[counter]; //temp is a variable
         array[counter] = array[idx];
