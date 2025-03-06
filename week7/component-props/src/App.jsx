@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Color from "./components/color.jsx";
+function App() { 
+  const colorData = [  // the parent
+    {name: "Royal Blue", hex: "#0000ff", desc: "A calming color"},  //desc -- short for description
+    {name: "Mint Green", hex: "#98ff98", desc: "Refreshing"},
+    {name: "Olive Drab", hex: "#6b8e23", desc: "I love olives"},
+]
 
-function App() {
-  const [count, setCount] = useState(0)
+  return ( // the child
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div> 
+      <h2>Colors</h2>
+      <Color 
+      name={colorData[0].name} 
+      desc={colorData[0].desc} 
+      hex={colorData[0].hex} 
+      />  
+      <Color 
+      name={colorData[1].name} 
+      desc={colorData[1].desc} 
+      hex={colorData[1].hex} 
+      />   
+      <Color 
+      name={colorData[2].name} 
+      desc={colorData[2].desc} 
+      hex={colorData[2].hex} 
+      />   
+    
+    </div>
   )
 }
 
-export default App
+export default App;
