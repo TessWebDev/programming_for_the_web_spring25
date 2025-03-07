@@ -1,3 +1,7 @@
+html{
+  margin: 72px;
+}
+
 body {
   max-width: 300px;
   width: 100%;
