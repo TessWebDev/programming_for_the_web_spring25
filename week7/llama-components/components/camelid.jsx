@@ -1,17 +1,15 @@
-import "./camelid";
-function camelid({name, lifeSpan, Weight, Height}) {   // ({}) -- is a parameter
-    console.log(name)
-    return ( //return is something you have to do with every component
-        <div className="camelidsFacts">
-            <h1>{name}</h1>
+function Camelid({name, img, lifeSpan, Weight, Height, trivia}) {
+
+    return (
+        <div>
+            <h2>{name}</h2>
+            <img src={img} alt={name} />
             <p>{lifeSpan}</p>
-            <div style={{
-                width: "25px",
-                height: "25px",
-                backgroundColor: hex
-            }}></div> 
+            <p>{Weight}</p>
+            <p>{Height}</p>
+            <p>{trivia}</p>
         </div>
-    ) 
+    );
 }
 
-export default camelid;
+export default Camelid;
