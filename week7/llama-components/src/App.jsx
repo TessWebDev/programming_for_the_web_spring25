@@ -1,22 +1,29 @@
-import image from "./"
-function App() {
-  const logo = [
-    {name: "cute llamas"}
-  ]
+import image from "./assets/cutellamas.jpg"
+function App() { 
+  const camelids = [  // the parent
+    {name: "Llama", lifeSpan: "about 15 to 29 years", Weight: "250 to 350 pounds", Height: "36in to 47in at shoulder, 5' to 6'5 at head"},  //desc -- short for description
+    {name: "Alpaca", lifeSpan: "about 15 to 25 years", Weight: "110 to 175 pounds", Height: "32in to 40in at shoulder, 4' to 5' at head"}
+]
 
-  const fact = [
-    name: 
-  ]
+  return ( // the child
 
-  return (
-    <div>
-      <h2>Cute llamas</h2>
-      <logo name={./assets/cutellamas.jpg}/>
-
-      <h3></h3>
+    <div> 
+      <h2>Camelids</h2>
+      <image 
+      name={camelids[0].name} 
+      lifeSpan={camelids[0].lifeSpan} 
+      Weight={camelids[0].Weight} 
+      Height={camelids[0].Height} 
+      />  
+     <image 
+      name={camelids[1].name} 
+      lifeSpan={camelids[1].lifeSpan} 
+      Weight={camelids[1].Weight} 
+      Height={camelids[1].Height} 
+      />    
+    
     </div>
   )
-
 }
 
 export default App;
