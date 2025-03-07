@@ -8,14 +8,14 @@ function App() {
   return ( // the child
 
     <div> 
-      <h2>Camelids</h2>
-      <image 
+      <h2>Camelids Information</h2>
+      <camelids 
       name={camelids[0].name} 
       lifeSpan={camelids[0].lifeSpan} 
       Weight={camelids[0].Weight} 
       Height={camelids[0].Height} 
       />  
-     <image 
+     <camelids
       name={camelids[1].name} 
       lifeSpan={camelids[1].lifeSpan} 
       Weight={camelids[1].Weight} 
