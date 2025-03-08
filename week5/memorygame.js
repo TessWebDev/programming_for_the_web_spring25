@@ -69,7 +69,7 @@ function draw () {
         }
         cards[k].show();
     }
-    noLoop;
+    noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
     fill(255); //white
@@ -81,6 +81,7 @@ function draw () {
 }
 
 function mousePressed() { // THIS FLIPS THE CARDS
+    
     if(gameState.waiting) {
         return; // stop the function and won't go on to the rest of it.
     }
@@ -130,11 +131,13 @@ class Card {
     
     show () { //methods -- like functions, but specific to your class
         if (this.face === UP || this.isMatch) {  // || means or
+            console.log("up")
             // fill('#aaa'); //the face of card (the different images)
             // rect(this.x, this.y, this.width, this.height, 10);
             image(this.cardFaceImg, this.x , this.y + 2); //shows the image on the face of the card, variable = cardback, location -- x,y THE NUMBERS + helps position the image.
             
         } else {
+            console.log("down")
             // fill('rgb(57.7%, 9.9%, 9.9%)');
             // rect(this.x, this.y, this.width, this.height, 10);    //I TOOK THIS OUT BECAUSE I AM USING WHOLE IMAGE I DESIGNED -- I NO LONGER NEED THE RED.
             image(cardBack, this.x, this.y); //shows the image on the back of the card, variable = cardback, location -- x,y   
@@ -144,8 +147,9 @@ class Card {
 
     didHit (mouseX, mouseY){
     
-        if (mouseX >= this.x && mouseX <= this.x + this.width &&
+        if (mouseX >= this.x && mouseX <= this.x + this.width &&       
             mouseY >= this.y && mouseY <= this.y + this.height) {
+                console.log("click")
                 this.flip(); // the flip call
                 return true;
             }   else {
