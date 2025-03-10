@@ -1,0 +1,19 @@
+.character-table {
+  width: 100%;
+  border: 1px solid black;
+  align-items: center;
+  border-collapse: collapse;
+  
+}
+
+.character-table thead, .character-table tr {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.character-table td, .character-table th {
+  border-left: 1px solid black;
+  text-align: center;
+}
+.character-table img {
+  width: 200px;
+}
