@@ -1,3 +1,7 @@
+body {
+  max-width: 100%;
+}
+
 .character-table {
   width: 100%;
   border: 1px solid black;
@@ -9,6 +13,8 @@
 .character-table thead, .character-table tr {
   border-bottom: 1px solid black;
   text-align: center;
+  width: 100%;
+  position:sticky;
 }
 .character-table td, .character-table th {
   border-left: 1px solid black;

@@ -1,5 +1,5 @@
 import "./App.css";
-import { characterRow } from "./characterRow";
+import { characterRow} from "./characterRow"
 
 function App() {
   const characters = [
@@ -49,9 +49,10 @@ function App() {
   return (
     <>
       <h1>The Peanuts Gang Collection</h1>
+      <p>A small collection of Charlie Brown and the Gang!</p>
       
       <table className="character-table">
-        <thread>
+        <thead>
           <tr>
             <th>Character Name</th>
             <th>Colors</th>
@@ -60,7 +61,7 @@ function App() {
             <th>Baseball Winner</th>
             <th>Image</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
          {characters.map((character, index) => {
           return (
