@@ -1,5 +1,6 @@
 import "./App.css";
-import { characterRow} from "./characterRow"
+import "./characterRow.css"
+
 
 function App() {
   const characters = [
