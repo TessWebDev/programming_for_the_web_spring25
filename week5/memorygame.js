@@ -90,7 +90,7 @@ function mousePressed() { // THIS FLIPS THE CARDS
         //first check flipped cards length, then we can trigger the flip.
     if(gameState.flippedCards.length < 2 && cards[k].didHit(mouseX, mouseY)) { // the array name is cards, with a loop number   ///  gameState.flippedCards.length < 2 -- allows you to only flip two cards at a time.
         gameState.flippedCards.push(cards[k]);
-        cards[k].flip();
+        // cards[k].flip();
        }
     }
 
