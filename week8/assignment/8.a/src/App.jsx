@@ -7,44 +7,58 @@ import Masthead from './Masthead/Masthead';
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
   const [decks, setDecks] = useState([
     {
-    character: "Charlie Brown, gang leader",
+    character: "Charlie Brown, Gang Leader",
     colors: ["yellow", "black"],
     personality: "The Loser",
     interests: "The Litte Red-Haired Girl",
     baseballWinner: false,
-    image: "/cb-color.avif"
+    image: "/cb-color.avif",
+    id: "1"
     },
     {
-    character: "Linus, Lucy's little brother",
+    character: "Linus Van Pelt, Lucy's Little Brother",
     colors: ["red strpes", "blue blanket"],
     personality: "Philosopher",
     interests: "His Blanket",
     baseballWinner: true,
-    image: "/li-color.avif"
+    image: "/li-color.avif",
+    id: "2"
     },
     {
-    character: "Lucy, The Queen",
+    character: "Lucy Van Pelt, The Queen",
     colors: ["blue", "white"],
     personality: "Being Bossy",
     interests: "Psychiatry",
     baseballWinner: true,
-    image: "/lu-color.avif"
+    image: "/lu-color.avif",
+    id: "3"
     },
     {
-    character: "Peppermint Patty, The Tom-boy",
+    character: "Peppermint Patty, Tom-Boy",
     colors: ["green", "brown"],
     personality: "The Athlete",
     interests: "Skating",
     baseballWinner: true,
-    image: "/pp-color.avif"
+    image: "/pp-color.avif",
+    id: "4"
     },
     {
-    character: "Snoopy, Charlie Brown's beagle",
+    character: "Snoopy, Charlie Brown's Beagle",
     colors: ["white", "black"],
     personality: "Joe Cool",
     interests: "Suppertime",
     baseballWinner: false,
-    image: "/sn-color.avif"
+    image: "/sn-color.avif",
+    id: "5"
+    },
+    {
+    character: "Schroeder, Musician",
+    colors: ["red", "blue"],
+    personality: "Moody Musical Genius",
+    interests: "Playing Piano, Hockey",
+    baseballWinner: true,
+    image: "/sc-color_1.avif",
+    id: "6"
     }
     
   ]);

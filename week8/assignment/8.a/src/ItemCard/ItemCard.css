@@ -12,3 +12,45 @@
     justify-content: space-around;
     position: relative;
 }
+
+.cardImg img {
+    max-width: 200px;
+    width: 100%;
+}
+
+.cardTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 19px;
+}
+
+.stripe {
+    height: 5px;
+    width: 100%;
+}
+
+.white {
+    background-color: antiquewhite;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.brown {
+    background-color: brown;
+}
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
