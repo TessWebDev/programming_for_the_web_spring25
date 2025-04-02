@@ -7,7 +7,7 @@ function App() { //state variable is anything that might change within your app 
     {
     character: "Charlie Brown, gang leader",
     colors: ["yellow", "black"],
-    personality: "The loser",
+    personality: "The Loser",
     interests: "The Litte Red-Haired Girl",
     baseballWinner: false,
     image: "/cb-color.avif"
@@ -48,9 +48,13 @@ function App() { //state variable is anything that might change within your app 
   ]);
 
   return (
-    <>
-     
-    </>
+    <div className="page">
+     {/* Masthead goes here*/}
+     <div className="collection">
+      {/* deck map goes here */}
+      {/* use ItemCard component in loop */}
+     </div>
+    </div>
   )
 }
 
