@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css';
-
+import ItemCard from './ItemCard/ItemCard';
 import Masthead from './Masthead/Masthead';
 
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
@@ -56,6 +56,11 @@ function App() { //state variable is anything that might change within your app 
      <div className="collection">
       {/* deck map goes here */}
       {/* use ItemCard component in loop */}
+      {decks.map((characterDeck) => {
+        return (
+          <ItemCard key={characterDeck.id} {...characterDeck}/> //...spread operator on reactor commonents
+        )
+      })}
      </div>
     </div>
   )

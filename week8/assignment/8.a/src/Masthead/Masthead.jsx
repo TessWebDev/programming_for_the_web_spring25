@@ -1,4 +1,4 @@
-import MastheadImg from "../assets/Peanuts_Gang_Collection_Banner_SBS.webp"
+import MastheadImg from "../assets/Peanuts_Gang_Collection_Banner_SBS.webp";
 import './masthead.css';
 
 export default function Masthead() {
