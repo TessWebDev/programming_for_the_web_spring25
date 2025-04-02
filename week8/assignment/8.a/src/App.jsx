@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
-import './App.css'
+import './App.css';
+
+import Masthead from './Masthead/Masthead';
 
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
   const [decks, setDecks] = useState([
@@ -50,6 +52,7 @@ function App() { //state variable is anything that might change within your app 
   return (
     <div className="page">
      {/* Masthead goes here*/}
+     <Masthead />
      <div className="collection">
       {/* deck map goes here */}
       {/* use ItemCard component in loop */}
