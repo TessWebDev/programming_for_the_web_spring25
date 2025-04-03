@@ -9,55 +9,55 @@ import {nanoid} from "nanoid";
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
   const [decks, setDecks] = useState([
     {
-    character: "Charlie Brown, Gang Leader",
+    character: "Charlie Brown - Gang Leader",
     colors: ["yellow", "black"],
-    personality: "The Loser",
-    interests: "The Litte Red-Haired Girl",
+    personality: "AKA The Loser",
+    interests: "Interests: Litte Red-Haired Girl",
     baseballWinner: false,
     image: "/cb-color.avif",
     id: "1"
     },
     {
-    character: "Linus Van Pelt, Lucy's Little Brother",
+    character: "Linus Van Pelt - Lucy's Little Brother",
     colors: ["red strpes", "blue blanket"],
-    personality: "Philosopher",
-    interests: "His Blanket",
+    personality: "AKA Philosopher",
+    interests: "Interests: His Blanket",
     baseballWinner: true,
     image: "/li-color.avif",
     id: "2"
     },
     {
-    character: "Lucy Van Pelt, The Queen",
+    character: "Lucy Van Pelt - The Queen",
     colors: ["blue", "white"],
-    personality: "Being Bossy",
-    interests: "Psychiatry",
+    personality: "AKA Bossy",
+    interests: "Interests: Psychiatry",
     baseballWinner: true,
     image: "/lu-color.avif",
     id: "3"
     },
     {
-    character: "Peppermint Patty, Tom-Boy",
+    character: "Peppermint Patty - Tom-Boy",
     colors: ["green", "brown"],
-    personality: "The Athlete",
-    interests: "Skating",
+    personality: "AKA Athlete",
+    interests: "Interests: Skating",
     baseballWinner: true,
     image: "/pp-color.avif",
     id: "4"
     },
     {
-    character: "Snoopy, Charlie Brown's Beagle",
+    character: "Snoopy - Charlie Brown's Beagle",
     colors: ["white", "black"],
-    personality: "Joe Cool",
-    interests: "Suppertime",
+    personality: "AKA Joe Cool",
+    interests: "Interests: Suppertime",
     baseballWinner: false,
     image: "/sn-color.avif",
     id: "5"
     },
     {
-    character: "Schroeder, Musician",
+    character: "Schroeder - Musician",
     colors: ["red", "blue"],
-    personality: "Moody Musical Genius",
-    interests: "Playing Piano, Hockey",
+    personality: "AKA Moody Musical Genius",
+    interests: "Interests: Playing Piano, Hockey",
     baseballWinner: true,
     image: "/sc-color_1.avif",
     id: "6"

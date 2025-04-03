@@ -5,7 +5,7 @@ export default function Masthead() {
     return (
         <div className="masthead">
             <img src={MastheadImg}alt="Favortie Peanuts Characters"/>
-            <h1>The Peanuts Gang</h1>
+            <h1>Meet Some of the Gang</h1>
         </div>
     )
 }
