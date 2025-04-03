@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './App.css';
 import ItemCard from './ItemCard/ItemCard';
 import Masthead from './Masthead/Masthead';
+import { func } from 'prop-types';
+import {nanoid} from "nanoid";
 
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
   const [decks, setDecks] = useState([
@@ -62,6 +64,21 @@ function App() { //state variable is anything that might change within your app 
     }
     
   ]);
+  function deleteCard(id) {
+    console.log("delete me", id);
+    const updatedArray = decks.filter((characterDeck) => {
+      return characterDeck.id !== id; // will skip item with matching id 
+    });
+    setDecks(updatedArray)
+  }
+  function duplicateCard(id) {
+    console.log("duplicate me", id);
+    const matchingDeck = decks.find((characterDeck) => {
+      return characterDeck.id === id
+    });
+    const updatedDeck = {...matchingDeck, id: nanoid()}
+    setDecks([...decks, updatedDeck]);
+  }
 
   return (
     <div className="page">
@@ -72,7 +89,11 @@ function App() { //state variable is anything that might change within your app 
       {/* use ItemCard component in loop */}
       {decks.map((characterDeck) => {
         return (
-          <ItemCard key={characterDeck.id} {...characterDeck}/> //...spread operator on reactor commonents
+          <ItemCard 
+          key={characterDeck.id}
+          deleteFn={deleteCard}
+          duplicateFn={duplicateCard}
+          {...characterDeck}/> //...spread operator on reactor commonents
         )
       })}
      </div>
