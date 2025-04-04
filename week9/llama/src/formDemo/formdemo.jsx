@@ -15,13 +15,31 @@ function App() {
     //     password: ""
     // })
     // function handleTextChange(evt)
+    const [sodaChoice, setSodaChoice] = useState("pepsi")
+    function radioChangeHandler(event) { 
+        setSodaChoice(event.target.value)
+    }
+    const [selectResponse, setSelectResponse] = useState("aggro")
+
     const [pets, setPets] = useState(true);
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log({firstName, lastName, password, pets})
+        // console.log({firstName, lastName, password, pets})
+        console.log({colors})
     }
+    const [colors, setColors] = useState([]);
+    function handleCheckbox(event) {
+        console.log(event.target.value, event.target.id);
+        if(colors.includes(event.target.id)) {
+            setColors(colors.filter((color) => {
+                return color !== event.target.id;
+            }))
+        } else {
+            setColors([...colors, event.target.id]) //including new array and item
+        }
 
+    }
   return (
     <>
       <form onSubmit={handleSubmit}> 
@@ -81,6 +99,7 @@ function App() {
                 />
             </div>
         </fieldset>
+
         <fieldset>
             <legend>RadioGroup</legend>
             <div>
@@ -89,10 +108,70 @@ function App() {
                     type="radio" 
                     name="soda" 
                     id="pepsi" 
+                    value="pepsi"
+                    onChange={radioChangeHandler}
+                    checked={sodaChoice=== "pepsi"}
                     />
                 </label>
             </div>
+            <div>
+                <label htmlFor="coke">Coke
+                    <input 
+                    type="radio" 
+                    name="soda" 
+                    id="coke" 
+                    value="coke"
+                    onChange={radioChangeHandler}
+                    checked={sodaChoice=== "coke"}
+                    />
+                </label>
+            </div>
+            <div>
+                <label htmlFor="mtnDew">Mountain Dew
+                    <input 
+                    type="radio" 
+                    name="soda" 
+                    id="mtnDew" 
+                    value="mtnDew"
+                    onChange={radioChangeHandler}
+                    checked={sodaChoice=== "mtnDew"}
+                    />
+                </label>
+            </div>
+        
         </fieldset>
+                <legend>Checkbox</legend>
+                <label htmlFor="red">Red
+                    <input 
+                    type="checkbox" 
+                    name="colors" 
+                    id="red" 
+                    value={colors.includes("red")}
+                    onChange={handleCheckbox}
+                    />
+                </label>
+                <label htmlFor="blue">Blue
+                    <input 
+                    type="checkbox" 
+                    name="colors" 
+                    id="blue" 
+                    value={colors.includes("blue")}
+                    onChange={handleCheckbox}
+                    />
+                </label>
+                <label htmlFor="yellow">Yellow
+                    <input 
+                    type="checkbox" 
+                    name="colors" 
+                    id="yellow" 
+                    value={colors.includes("yellow")}
+                    onChange={handleCheckbox}
+                    />
+                </label>
+        <fieldset>
+
+        </fieldset>
+
         <fieldset>
             <legend>Select</legend>
             <select name="playerType" id="playerType" >
@@ -102,6 +181,7 @@ function App() {
                 <option value="aggro">Aggro</option>
             </select>
         </fieldset>
+        
         <button type="submit"> Submit </button>
       </form>
     </>
