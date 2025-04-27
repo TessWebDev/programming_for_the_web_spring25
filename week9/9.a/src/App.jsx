@@ -6,9 +6,10 @@ import Masthead from './Masthead/Masthead';
 import { func } from 'prop-types';
 import {nanoid} from "nanoid";
 import {useForm} from 'react-hook-form';
+import { NewCharacterForm } from './NewCharacterForm/NewCharacterForm';
 
 function App() { //state variable is anything that might change within your app (based on user event, or behavior), -- 
-  const {register, handleSubmit} = useForm();
+ 
   const [decks, setDecks] = useState([
     {
     character: "Charlie Brown - Gang Leader",
@@ -57,7 +58,7 @@ function App() { //state variable is anything that might change within your app 
     },
     {
     character: "Schroeder - Musician",
-    colors: ["red", "blue"],
+    colors: ["red", "blue, pink"],
     personality: "AKA Moody Musical Genius",
     interests: "Interests: Playing Piano, Hockey",
     baseballWinner: true,
@@ -71,6 +72,10 @@ function App() { //state variable is anything that might change within your app 
     //do stuff with data to add a character deck
     //taking existing character decks and ...spreading new deck to it.
     console.log("data", data);
+    const newId = nanoid (6);
+    const newDeck = {...data, id:newId};
+    console.log(newDeck);
+    setDecks([...decks, newDeck]);
   }
   function deleteCard(id) {
     console.log("delete me", id);
@@ -106,15 +111,7 @@ function App() { //state variable is anything that might change within your app 
       })}
       
      </div>
-     <div>
-        <form onSubmit= {handleSubmit(addCharacterDeck)}>
-          <div className="form-group">
-            <label>Character's Name</label>
-            <input {...register("character", {required: true})} />
-          </div>
-          <button type="submit">Add Character</button>
-        </form>
-      </div>
+      <NewCharacterForm addCharacterFn={addCharacterDeck} />
     </div>
   )
 }
