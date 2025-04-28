@@ -11,9 +11,9 @@ function App() {
     <>
     {/* Navigation here */}
     <ul>
-      <li>Home</li>
-      <li>Llamas</li>
-      <li>Alpaca</li>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/Llamas">Llamas</Link></li>
+      <li><Link to="/Alpaca">Alpaca</Link></li>
     </ul>
 
     {/* Routes here */}

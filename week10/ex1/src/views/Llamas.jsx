@@ -1,8 +1,10 @@
+import llamaPic from "../assets/cutellamas.jpg";
+
 export function Llamas() {
     return(
         <> 
            <h1>Llamas</h1>
-            {/* <!-- please include a llama picture here! --> */}
+            <img src={llamaPic} alt="Llamas" />
             <p>Lamoids, or llamas (as they are more generally known as a group), consist of the vicuña (Vicugna vicugna, prev. Lama
             vicugna), guanaco (Lama guanicoe), Suri alpaca, and Huacaya alpaca (Vicugna pacos, prev. Lama guanicoe pacos), and the
             domestic llama (Lama glama). Guanacos and vicuñas live in the wild, while llamas and alpacas exist only as

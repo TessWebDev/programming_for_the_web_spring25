@@ -1,8 +1,10 @@
+import alpacaPic from "../assets/alpaca.jpg";
+
 export function Alpaca() {
     return(
         <>
            <h1>Alpaca</h1>
-            {/* <!-- please include an alpaca picture here! --> */}
+            <img src={alpacaPic} alt="alpaca" />
             <p>The alpaca (Lama pacos) is a species of South American camelid mammal. It is similar to, and often confused with, the
             llama. However, alpacas are often noticeably smaller than llamas. The two animals are closely related and can
             successfully crossbreed. Both species are believed to have been domesticated from their wild relatives, the vicuña and
@@ -19,7 +21,7 @@ export function Alpaca() {
             coats and bedding in other parts of the world. The fiber comes in more than 52 natural colors as classified in Peru,
             12
             as classified in Australia, and 16 as classified in the United States.
-            </p>
+            </p> 
             <p>Alpacas communicate through body language. The most common is spitting when they are in distress, fearful, or mean to
             show dominance. Male alpacas are more aggressive than females, and tend to establish dominance of their herd group.
             In some cases, alpha males will immobilize the head and neck of a weaker or challenging male in order to show their
