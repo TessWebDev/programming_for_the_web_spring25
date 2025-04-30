@@ -2,6 +2,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import Masthead from "../Masthead/Masthead";
 import ItemCard from "../ItemCard/ItemCard";
+
 import { NewCharacterForm } from "../NewCharacterForm/NewCharacterForm";
 import deckData from "../assets/deck-data.json"
 import { DeckDetail } from "../views/DeckDetail";
@@ -51,7 +52,7 @@ export function Home() {
          })}
          
         </div>
-         <NewCharacterForm addCharacterFn={addCharacterDeck} />
+         
        </div>
     );
 }
