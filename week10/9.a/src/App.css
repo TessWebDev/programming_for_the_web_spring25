@@ -1,0 +1,10 @@
+.collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* will go to next page*/
+  }
+  
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+  }

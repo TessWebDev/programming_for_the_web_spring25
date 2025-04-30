@@ -1,0 +1,112 @@
+body {
+    background-color: wheat;
+}
+.characterCard {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    height: 375px;
+    border: 3px solid black;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.cardImg img {
+    max-width: 200px;
+    width: 100%;
+}
+
+.cardTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: chocolate;
+    font-size: larger;
+}
+
+.cardFacts {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: green;
+}
+
+.cardBody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkgoldenrod;
+}
+
+.baseballWinner img, .mainGroup {
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    position: absolute;
+    z-index: 10;
+    left: 5px;
+}
+
+.baseballWinner {
+    top: 50px;
+}
+
+.actions {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.actions a img {
+    width: 50px;
+    height: 50px;
+}
+
+.actions a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 3px;
+    margin: 10px;
+    background: yellow;
+}
+
+.actions a:hover {
+    background: orange;
+}
+
+.stripe {
+    height: 5px;
+    width: 100%;
+}
+
+.white {
+    background-color: antiquewhite;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.brown {
+    background-color: brown;
+}
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
