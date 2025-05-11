@@ -1,9 +1,15 @@
 import { useState } from "react";
 import {nanoid} from "nanoid";
-import {Masthead} from "../Masthead/Masthead";
-import { ItemCard} from "../ItemCard/ItemCard";
+import Masthead from "../Masthead/Masthead";
+import  ItemCard from "../ItemCard/ItemCard";
+
 import { NewCharacterForm } from "../NewCharacterForm/NewCharacterForm";
+import deckData from "../assets/deck-data.json";
+
 export function Home() {
+    const [decks, setDecks] = useState(deckData);
+
+
      function addCharacterDeck(data) {
         //do stuff with data to add a character deck
         //taking existing character decks and ...spreading new deck to it.

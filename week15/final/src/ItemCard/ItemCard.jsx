@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import './ItemCard.css';
 import clsx from "clsx";
 import baseballbat from "../assets/baseballbat.png";
@@ -24,7 +25,10 @@ export default function ItemCard({
             <div className="cardImg">
                 <img src={image} alt={character} />
             </div>
-            <div className="cardTitle">{character}</div>
+            <div className="cardTitle">
+                <Link to={`${id}`}>{character}</Link>
+                
+                </div>
             <div className="cardFacts">{personality}</div>
             <div className="cardBody">{interests}</div>
             <div className="actions">
