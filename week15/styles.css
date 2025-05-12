@@ -9,10 +9,10 @@ body {
 .carousel {
     width: 100vw;
     height: 100vw;
-    position: relative;
+    position: relative; /*postion buttons inside image*/
 }
 
-.carousel {
+.carousel > ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -21,29 +21,34 @@ body {
 .slide {
     position: absolute;
     inset: 0;
-    opacity: 0;
+    opacity: 0; 
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
 }
 
 .slide > img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /*fills entire screen and aspect ration maintained*/
     object-position: center; /*focuses on center of image*/
 }
 
 .slide[data-active] {
     opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
 }
 
 .carousel-button {
     position: absolute;
+    z-index: 2; /*makes buttons show up over the top of the images*/
     background: none;
     border: none;
     font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(225, 225, 225, .5);
+    top: 50%; /*push buttons down from the top of the screen*/
+    transform: translateY(-50%); /*makes arrows dead center*/
+    color: rgba(225, 225, 225, .5); /*mostly white but translucent*/
     cursor: pointer;
     border-radius: .25rem;
     padding: 0 .5rem;
@@ -55,7 +60,7 @@ body {
 .carousel-button:hover,
 .carousel-button:focus {
     color: white;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .carousel-button:focus { /*for tab on the page not a mouse*/
