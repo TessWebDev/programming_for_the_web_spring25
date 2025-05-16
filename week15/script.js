@@ -1,65 +1,56 @@
-const buttons = document.querySelectorAll("[data-carousel-button]")
+let img;
+let gif;
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const offset = button.dataset.carouselButton === "next" ? 1 : -1
-        const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
 
-        const activeSlide = slides.querySelector("[data-active]")
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset
-        if (newIndex < 0) newIndex = slides.children.length -1
-        if (newIndex >= slides.children.length) newIndex = 0
+function preload() {
+  // Load the image (replace with your actual image path)
+  img = loadImage('Logo.jpg');
 
-        slides.children[newIndex].dataset.active = true //adds to active slide
-        delete activeSlide.dataset.active // removes from active slide
-    })
-})
+  // Load the GIF (replace with your actual GIF path)
+  gif = loadImage('chair_gif.gif');
+}
 
-// //Varaibles
-// let images = [...document.querySelectorAll('.img')];
-// let slider = document.querySelector('.slider');
-// let sliderWidth;
-// let imageWidth;
-// let current = 0;
-// let target = 0;
-// let ease = .05
+function setup() {
+  createCanvas(1850, 900); // Adjust canvas size as needed
 
-// window,addEventListener('resize', init); // so the carousel always fits page width
+  // Calculate dimensions (optional, but useful for positioning)
+  imageWidth = img.width;
+  imageHeight = img.height;
+  gifWidth = gif.width;
+  gifHeight = gif.height;
+  
+    // Resize the image, keeping the aspect ratio.
+  img.resize(900, 900);
+}
 
-// images.forEach((img, idx) => {
-//     img.style.backgroundImage = `url(./images/${idx+1}.png)` // images applied to img div. +1 start images off at 0 
-// })
+function draw() {
+  background(255,255,255); // Set background color
 
-// function lerp(start, end, t){
-//     return start * (1-t) + end * t; //start and end position, smooth animation
-// }
+  // Draw the image (e.g., on the left)
+  image(img, 20, 20, imageWidth, imageHeight);
 
-// function setTransform(el, transform) {
-//     el.style.transform = transform; //what the function does
-// }
+  //Draw the GIF (e.g., on the right)
+  image(gif, imageWidth + 15, 0, gifWidth, gifHeight);
 
-// function init(){ //function to call when page is loaded
-//     sliderWidth = slider.getBoundingClientRect().width;
-//     imageWidth = sliderWidth / images.length;
-//     document.body.style.height = `${sliderWidth - (window.innerWidth - window.innerHeight)}px` // gives scroll bar?
-// }
+  // Set the GIF frame for animation (example: loop through frames)
+  gif.setFrame();  
+  
+  
+  
+  // Optional: Add some spacing between the image and GIF
+  image(gif, imageWidth + 19, 0, gifWidth, gifHeight);
+  
+}
 
-// function animate() { //
-//     current = parseFloat(lerp(current, target, ease)).toFixed(2);
-//     target = window.scrollY; //amount of px scroll down by
-//     setTransform(slider, `translateX(-${current}px)`)
-//     animateImages();
-//     requestAnimationFrame(animate);
-// }
-//  function animateImages() {
-//     let ratio = current / imageWidth;
-//     let intersectionRatioValue;
+// Pause the GIF when the user presses the mouse.
+function mousePressed() {
+  gif.pause();
+}
 
-//     images.forEach((image, idx) => {
-//         intersectionRatioValue = ratio - (idx * 0.7); 
-//         setTransform(image, `translateX(${intersectionRatioValue * 70}px)`)
-//     })
-//  }
-// init();
-// animate();
+// Play the GIF when the user presses the mouse.
+function mouseReleased() {
+  gif.play();
+}
+
+//video
 
