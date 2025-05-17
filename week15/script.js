@@ -4,10 +4,10 @@ let gif;
 
 function preload() {
   // Load the image (replace with your actual image path)
-  img = loadImage('Logo.jpg');
+  img = loadImage('./images/Logo.jpg');
 
   // Load the GIF (replace with your actual GIF path)
-  gif = loadImage('chair_gif.gif');
+  gif = loadImage('.images/chair_gif.gif');
 }
 
 function setup() {
